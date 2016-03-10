@@ -63,3 +63,6 @@ $RECYCLE.BIN/
 *.lnk
 /Account/nbproject/private/
 /Account/build/
+/Student/nbproject/private/
+/Student/build/
+/CaesarKey/nbproject/private/
