@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.util.Scanner;
 /**
  *
- * @author Jianbin Liu
+ * @author KiiibLau
  */
-import java.util.Scanner;
-
 public class AccountTest {
     
     // main method begins execution of Java application
