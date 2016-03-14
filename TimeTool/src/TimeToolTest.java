@@ -12,9 +12,10 @@ public class TimeToolTest {
             System.out.println("***Main Menu***");
             System.out.println("1) Show the Current Time");
             System.out.println("2) Leap Year");
+            System.out.println("3) Show the Calendar");
             System.out.println("0) Exit");
             System.out.println("");
-            System.out.println("Please enter a number in [1,2,0]: ");
+            System.out.println("Please enter a number in [1,2,3,0]: ");
 
             input = scanner.next(); //獲取用戶輸入(String)
             int num = Integer.parseInt(input);  //型別轉換（Integer)
@@ -30,6 +31,13 @@ public class TimeToolTest {
                         System.out.println(year + " is a leap year.");
                     else
                         System.out.println(year + " is not a leap year.");
+                    break;
+                case 3:
+                    System.out.print("Year: ");
+                    String inputYear = scanner.next();   //獲取用戶輸入（String）
+                    System.out.print("Month: ");
+                    String inputMonth = scanner.next();   //獲取用戶輸入（String）
+                    TimeTool.showCalendar(inputYear,inputMonth); //顯示萬年曆
                     break;
             }
 

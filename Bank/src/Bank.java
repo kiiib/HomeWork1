@@ -2,9 +2,10 @@
  * Created by Jianbin Liu on 2016/3/10.
  */
 public class Bank {
-
-    private static boolean isOpenAccount = false;  //是否開戶狀態
-    private static double deposit = 0; //存款金額
+    //是否開戶狀態
+    private static boolean isOpenAccount = false;
+    //存款金額
+    private static double deposit = 0;
 
     /**
      * getIsOpenAccount: get the status of whether opened account
