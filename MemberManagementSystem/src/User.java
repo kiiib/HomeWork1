@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 /**
  * Created by Jianbin Liu on 3/23/2016.
  */
+
 public class User {
     private String userName;    // user's username
     private String password;    // user's password
