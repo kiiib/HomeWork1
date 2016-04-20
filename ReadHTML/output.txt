@@ -1,0 +1,21 @@
+Rank	Programming Language	Ratings
+1       Java                     20.846%        
+2       C                        13.905%        
+3       C++                      5.918%         
+4       C#                       3.796%         
+5       Python                   3.330%         
+6       PHP                      2.994%         
+7       JavaScript               2.566%         
+8       Perl                     2.524%         
+9       Ruby                     2.345%         
+10      Visual Basic .NET        2.273%         
+11      Delphi/Object Pascal     2.214%         
+12      Assembly language        2.193%         
+13      Objective-C              1.711%         
+14      Visual Basic             1.607%         
+15      Swift                    1.478%         
+16      MATLAB                   1.344%         
+17      PL/SQL                   1.314%         
+18      R                        1.266%         
+19      Groovy                   1.262%         
+20      D                        1.030%         
