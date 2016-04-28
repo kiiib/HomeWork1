@@ -25,9 +25,22 @@
       <file leaf-file-name="TimeLength.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TimeLength.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
+            <state relative-caret-position="1220">
               <caret line="73" column="65" selection-start-line="73" selection-start-column="65" selection-end-line="73" selection-end-column="65" />
-              <folding />
+              <folding>
+                <element signature="e#119#120#0" expanded="false" />
+                <element signature="e#143#144#0" expanded="false" />
+                <element signature="e#224#225#0" expanded="false" />
+                <element signature="e#256#257#0" expanded="false" />
+                <element signature="e#676#677#0" expanded="false" />
+                <element signature="e#737#738#0" expanded="false" />
+                <element signature="e#823#824#0" expanded="false" />
+                <element signature="e#856#857#0" expanded="false" />
+                <element signature="e#980#981#0" expanded="false" />
+                <element signature="e#1046#1047#0" expanded="false" />
+                <element signature="e#1129#1130#0" expanded="false" />
+                <element signature="e#1156#1157#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -35,8 +48,8 @@
       <file leaf-file-name="TimeLengthTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TimeLengthTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1658">
-              <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+            <state relative-caret-position="460">
+              <caret line="32" column="13" selection-start-line="15" selection-start-column="12" selection-end-line="32" selection-end-column="13" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -97,9 +110,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -134,7 +144,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.TimeLengthTest">
     <configuration default="false" name="TimeLengthTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -463,24 +479,81 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/TimeLength.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TimeLength.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
+        <state relative-caret-position="1220">
           <caret line="73" column="65" selection-start-line="73" selection-start-column="65" selection-end-line="73" selection-end-column="65" />
-          <folding />
+          <folding>
+            <element signature="e#119#120#0" expanded="false" />
+            <element signature="e#143#144#0" expanded="false" />
+            <element signature="e#224#225#0" expanded="false" />
+            <element signature="e#256#257#0" expanded="false" />
+            <element signature="e#676#677#0" expanded="false" />
+            <element signature="e#737#738#0" expanded="false" />
+            <element signature="e#823#824#0" expanded="false" />
+            <element signature="e#856#857#0" expanded="false" />
+            <element signature="e#980#981#0" expanded="false" />
+            <element signature="e#1046#1047#0" expanded="false" />
+            <element signature="e#1129#1130#0" expanded="false" />
+            <element signature="e#1156#1157#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TimeLengthTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1658">
-          <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TimeLength.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#119#120#0" expanded="false" />
+            <element signature="e#143#144#0" expanded="false" />
+            <element signature="e#224#225#0" expanded="false" />
+            <element signature="e#256#257#0" expanded="false" />
+            <element signature="e#676#677#0" expanded="false" />
+            <element signature="e#737#738#0" expanded="false" />
+            <element signature="e#823#824#0" expanded="false" />
+            <element signature="e#856#857#0" expanded="false" />
+            <element signature="e#980#981#0" expanded="false" />
+            <element signature="e#1046#1047#0" expanded="false" />
+            <element signature="e#1129#1130#0" expanded="false" />
+            <element signature="e#1156#1157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TimeLength.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1220">
+          <caret line="73" column="65" selection-start-line="73" selection-start-column="65" selection-end-line="73" selection-end-column="65" />
+          <folding>
+            <element signature="e#119#120#0" expanded="false" />
+            <element signature="e#143#144#0" expanded="false" />
+            <element signature="e#224#225#0" expanded="false" />
+            <element signature="e#256#257#0" expanded="false" />
+            <element signature="e#676#677#0" expanded="false" />
+            <element signature="e#737#738#0" expanded="false" />
+            <element signature="e#823#824#0" expanded="false" />
+            <element signature="e#856#857#0" expanded="false" />
+            <element signature="e#980#981#0" expanded="false" />
+            <element signature="e#1046#1047#0" expanded="false" />
+            <element signature="e#1129#1130#0" expanded="false" />
+            <element signature="e#1156#1157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TimeLengthTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="32" column="13" selection-start-line="15" selection-start-column="12" selection-end-line="32" selection-end-column="13" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

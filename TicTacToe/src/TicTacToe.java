@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class TicTacToe {
     private String[][] ticTacToe;
-    private int column;
     private int row;
+    private int column;
     private String whoNow = "X";    // whoNow represent the one who enter data now
-    //private String whoFirst = "X";   // whoFirst represent the one who play the game first
+
     Scanner scanner = new Scanner(System.in);
 
     /**
