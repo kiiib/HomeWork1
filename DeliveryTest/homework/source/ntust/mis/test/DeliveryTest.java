@@ -5,7 +5,7 @@ package ntust.mis.test;
 import ntust.mis.oo.*;
 
 public class DeliveryTest {
-    public static void main(String args[]){
+    public static void main(String[] args){
         Person sPerson1 = new Person("haha", "1235678", City.TAIPEI);
         Person sPerson2 = new Person("michal", "888777", City.TAIPEI);
         Person sPerson3 = new Person("sun", "09887643", City.TAIPEI);
