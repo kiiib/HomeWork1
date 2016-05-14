@@ -1,9 +1,12 @@
-public class Rectangle extends Quadrilateral {
+/**
+ * Created by Jianbin Liu on 5/14/2016.
+ */
+public class Rectangle extends Parallelogram {
 
     // 建構子 (x1, y1, x2, y2, x3, y3, x4, y4)
-    public Rectangle(double x1, double y1, double x2, double y2, 
-            double x3, double y3, double x4, double y4) {
-        super(x1, y1, x2, y2, x3, y3, x4, y4); // 使用 Quadrilateral 建構子
+    public Rectangle(double x1, double y1, double x2, double y2,
+                     double x3, double y3, double x4, double y4) {
+        super(x1, y1, x2, y2, x3, y3, x4, y4);
     }
 
     // 取得矩形長
@@ -27,9 +30,10 @@ public class Rectangle extends Quadrilateral {
         return getWidth() * getHeight();
     }
 
-    // 取得 Rectangle 物件的 string 格式
     public String toString() {
-        return String.format("Coordinates of Rectangle are:\n%s\nWidth is: %s\nHeight is: %s\nArea is: %s",
+        return String.format("Rectangle\n" +
+                        "%s\n" +
+                        "Width is: %.2f Height is: %.2f Area is: %.2f",
                 getCoordinatesAsString(), getWidth(), getHeight(), getArea());
     }
 
