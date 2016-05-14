@@ -1,5 +1,5 @@
 /**
- * Created by KiiibLau on 5/14/2016.
+ * Created by Jianbin Liu on 5/14/2016.
  */
 public class Square extends Rectangle {
 
