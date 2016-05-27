@@ -128,7 +128,6 @@ public class AddressBook {
 
             String line = null; // read the data in a line
             StringBuilder data = new StringBuilder();   // the read data
-            //data.append("@");
             while ((line = br.readLine()) != null){
                 //System.out.println(line);
                 data.append(line + "#");    // split each line #
@@ -137,7 +136,18 @@ public class AddressBook {
             br.close();
             fr.close();
 
-            //setSudoku(data.toString());
+            //write each line data to the contact Map, key is name
+            String lineData[] = data.toString().split("#");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); // 格式化日期
+            for(int i = 0; i < lineData.length; i++){
+                String contactData[] = lineData[i].split("\t");
+//                for(int j = 0; j < contactData.length; j++){
+//                    System.out.println(contactData[j]);
+//                }
+                contacts.put(contactData[0], new Contact(contactData[0], sdf.parse(contactData[1]), contactData[2], contactData[3]));
+            }
+            System.out.println("All of the contacts have been imported.");
+
         } catch (Exception e){
             e.printStackTrace();
         }
