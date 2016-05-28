@@ -5,7 +5,8 @@ import java.io.*;
 
 public class AddressBook {
     //private List<Contact> contacts = new ArrayList<Contact>(); // 聯絡人列表
-    private Map<String, Contact> contacts = new HashMap<String, Contact>();
+    //private Map<String, Contact> contacts = new HashMap<String, Contact>();
+    private Map<String, Contact> contacts = new TreeMap<String, Contact>();
     private static Scanner scanner = new Scanner(System.in);
 
     /**
@@ -30,13 +31,13 @@ public class AddressBook {
                 addressBook.editContacts();
                 break;
             case "4": // Delete the Contact
-                addressBook.showContacts();
+                addressBook.deleteContacts();
                 break;
             case "5": // Import Contacts
                 addressBook.importContacts();
                 break;
             case "6": // Export Contacts
-                addressBook.showContacts();
+                addressBook.exportContacts();
                 break;
             case "7": // 清除聯絡人列表
                 addressBook.clearList();
@@ -98,7 +99,7 @@ public class AddressBook {
      */
     public void showContacts() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); // 格式化日期
-        System.out.println("Name\tBirthday\tPhone\tE-mail");
+        System.out.println("Name\tBirthday\tPhone\t\tE-mail");
         System.out.println("--------------------------------------------------");
         for(Map.Entry<String, Contact> contact : contacts.entrySet()) { // 以加強版for迴圈走訪
             System.out.printf("%s\t%s\t%s\t%s\n", contact.getValue().getName(),
@@ -112,9 +113,49 @@ public class AddressBook {
      */
     public void editContacts() {
         System.out.println("Please enter the name of contact that you want to edit.");
-        System.out.println("Name: ");
+        System.out.print("Name: ");
         String name = scanner.next();
-        contacts.get(name);
+        if(contacts.containsKey(name)){
+            System.out.print("Phone: ");
+            String phone = scanner.next();
+            System.out.print("E-mail: ");
+            String email = scanner.next();
+            System.out.print("Birthday(yyyy/MM/dd): ");
+            String birthdayString = scanner.next();
+
+            // 驗證輸入格式
+            if (isValidFormat(name, birthdayString, phone, email)) {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); // 格式化日期
+                Date birthday = null; // 宣告Date物件
+                try {
+                    birthday = sdf.parse(birthdayString); // 解析日期字串並產生Date物件
+                    contacts.get(name).setName(name);
+                    contacts.get(name).setBirthday(birthday);
+                    contacts.get(name).setPhone(phone);
+                    contacts.get(name).setEmail(email);
+                    System.out.println("The contact has been changed.");
+                } catch (ParseException e) { // 若字串不符日期格式則拋出ParseException之例外
+                    e.printStackTrace(); // 顯示堆疊追蹤
+                }
+            }
+
+        }else{
+            System.out.println("Not found!");
+        }
+    }
+    /**
+     * Edit the Contact
+     */
+    public void deleteContacts(){
+        System.out.println("Please enter the name of contact that you want to delete.");
+        System.out.print("Name: ");
+        String name = scanner.next();
+        if(contacts.containsKey(name)){
+            contacts.remove(name);
+            System.out.println("The contact has been deleted.");
+        }else{
+            System.out.println("Not found!");
+        }
     }
 
     /**
@@ -132,7 +173,7 @@ public class AddressBook {
                 //System.out.println(line);
                 data.append(line + "#");    // split each line #
             }
-            System.out.println(data);
+            //System.out.println(data);
             br.close();
             fr.close();
 
@@ -141,9 +182,6 @@ public class AddressBook {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); // 格式化日期
             for(int i = 0; i < lineData.length; i++){
                 String contactData[] = lineData[i].split("\t");
-//                for(int j = 0; j < contactData.length; j++){
-//                    System.out.println(contactData[j]);
-//                }
                 contacts.put(contactData[0], new Contact(contactData[0], sdf.parse(contactData[1]), contactData[2], contactData[3]));
             }
             System.out.println("All of the contacts have been imported.");
@@ -154,10 +192,35 @@ public class AddressBook {
     }
 
     /**
+     * export the Contact
+     */
+    public void exportContacts(){
+        try {
+            File file = new File("contacts.txt");
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); // 格式化日期
+            bw.write("Name\tBirthday\tPhone\t\tE-mail");
+            bw.newLine();
+            bw.write("------------------------------------------------------------");
+            bw.newLine();
+            for(Map.Entry<String, Contact> contact : contacts.entrySet()) {
+                bw.write(contact.getValue().getName() + "\t" + sdf.format(contact.getValue().getBirthday()) + "\t" + contact.getValue().getPhone() + "\t" + contact.getValue().getEmail());
+                bw.newLine();
+            }
+            bw.close();
+            fw.close();
+            System.out.println("The contact list has been exported.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * 清除聯絡人列表
      */
     public void clearList() {
-        contacts.clear(); // 移除ArrayList中的所有元素
+        contacts.clear(); // 移除map中的所有元素
         System.out.println("The contact list is empty.");
     }
 

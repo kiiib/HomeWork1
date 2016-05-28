@@ -59,4 +59,20 @@ public class Contact implements Comparable<Contact> {
         return (this.birthday.compareTo(other.birthday));
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setBirthday(Date birthday){
+        this.birthday = birthday;
+    }
+
+    public void setPhone(String phone){
+        this.phone = phone;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
 }
