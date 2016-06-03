@@ -32,13 +32,13 @@ public class Time {
 
     public void createAlarm(String input) throws TimeFormatException {
         if(!input.matches("[0-9]{2}:[0-9]{2}:[0-9]{2}")){
-            throw new TimeFormatException("嚙請選蕭J嚙踝蕭嚙確嚙賣式嚙瘢 XX:YY:ZZ\n");
+            throw new TimeFormatException("請輸入正確格式！ XX:YY:ZZ\n");
         }else if(!input.matches("[0-1]{1}[0-9]{1}:[0-9]{2}:[0-9]{2}") && !input.matches("[2]{1}[0-3]{1}:[0-9]{2}:[0-9]{2}")){
-            throw new TimeFormatException("TimeFormatException: Hour嚙賣式嚙踝蕭嚙羯\n");
+            throw new TimeFormatException("TimeFormatException: Hour格式錯誤\n");
         }else if(!input.matches("[0-9]{2}:[0-5]{1}[0-9]{1}:[0-9]{2}")){
-            throw new TimeFormatException("TimeFormatException: Minute嚙賣式嚙踝蕭嚙羯\n");
+            throw new TimeFormatException("TimeFormatException: Minute格式錯誤\n");
         }else if(!input.matches("[0-9]{2}:[0-9]{2}:[0-5]{1}[0-9]{1}")){
-            throw new TimeFormatException("TimeFormatException: Second嚙賣式嚙踝蕭嚙羯\n");
+            throw new TimeFormatException("TimeFormatException: Second格式錯誤\n");
         }
         setTime(input);
         printStartTime();
@@ -65,6 +65,7 @@ public class Time {
         int currentHour = Integer.parseInt(hourDateFormat.format(now)); // the hour of current time
         int currentMinute = Integer.parseInt(minuteDateFormat.format(now)); // the minute of current time
 
+        if(currentHour == this.hour){   // 現在的小時數等於鬧鐘小時數
             if(currentMinute < this.minute){
                 afterHour = 0;
                 afterMinute = this.minute - currentMinute;
@@ -75,6 +76,7 @@ public class Time {
                 afterHour = 0;
                 afterMinute = 0;
             }
+        }else if(currentHour < this.hour){  // 現在的小時數小於鬧鐘小時數
             if(currentMinute < this.minute){
                 afterHour = this.hour - currentHour;
                 afterMinute = this.minute - currentMinute;
@@ -85,6 +87,7 @@ public class Time {
                 afterHour = this.hour - currentHour;
                 afterMinute = 0;
             }
+        }else if(currentHour > this.hour){  // 現在的小時數大於鬧鐘小時數
             if(currentMinute < this.minute){
                 afterHour = (24 - currentHour) + this.hour;
                 afterMinute = this.minute - currentMinute;
@@ -97,6 +100,6 @@ public class Time {
             }
         }
 
-       System.out.printf("嚙緩嚙瞇嚙綞嚙踝蕭嚙稽嚙緩嚙箭%d嚙緘嚙褕又%d嚙踝蕭嚙踝蕭嚙踝蕭珧嚙穀n", afterHour, afterMinute);
+        System.out.printf("已將鬧鐘設定在%d小時又%d分鐘後啟動\n", afterHour, afterMinute);
     }
 }
