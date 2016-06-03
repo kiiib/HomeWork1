@@ -35,7 +35,7 @@ public class GuestNumber {
             minValue = Integer.parseInt(value);
         }
         catch (Exception e){
-            System.out.println("Please enter number!!!!");
+            System.out.println("組瞦Please enter number!!!!");
         }
     }
 
@@ -152,14 +152,40 @@ public class GuestNumber {
 
         do{
             System.out.println("******** 瞦计笴栏 ********");
-            System.out.print("瞦计絛瞅程:");
-            setMinValue(scanner.next());// set the minValue
+            do{
+                System.out.print("瞦计絛瞅程:");
+                try{
+                    minValue = Integer.parseInt(scanner.next());
+                    break;
+                }catch (Exception e){
+                    System.out.println("組瞦Please enter number!!!!");
+                }
+            }while(true);
 
-            System.out.print("瞦计絛瞅程:");
-            setMaxValue(scanner.next());    // set the maxValue
+            do{
+                System.out.print("瞦计絛瞅程:");
+                try{
+                    maxValue = Integer.parseInt(scanner.next());
+                    break;
+                }catch (Exception e){
+                    System.out.println("組瞦Please enter number!!!!");
+                }
+            }while(true);
 
-            System.out.print("瞦计Ω计:");
-            setGuestTimes(scanner.next());    // set the guest time
+            do{
+                System.out.print("瞦计Ω计:");
+                try{
+                    guestTimes = Integer.parseInt(scanner.next());
+                    playRecord = new int[guestTimes];
+                    for(int i = 0; i < playRecord.length; i++)
+                        playRecord[i] = 0;
+                    break;
+                }
+                catch (Exception e){
+                    System.out.println("組瞦Please enter number!!!");
+                }
+            }while(true);
+
 
             System.out.println("******** 笴栏秨﹍ ********");
             output = "计絛瞅: %d ~ %d\n";
@@ -167,8 +193,17 @@ public class GuestNumber {
             createGuestNumber();
 
             for (int i = 0; i < guestTimes; i++){
-                System.out.print("眤瞦计:");
-                setPlayRecord(i,scanner.next());
+                do{
+                    System.out.print("眤瞦计:");
+                    try{
+                        playRecord[i] = Integer.parseInt(scanner.next());
+                        break;
+                    }
+                    catch (Exception e){
+                        System.out.println("組瞦Please enter number!!!");
+                    }
+                }while (true);
+
                 if(!guest(i, playRecord[i])){
                     break;
                 }
