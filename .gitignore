@@ -67,3 +67,5 @@ $RECYCLE.BIN/
 /Student/build/
 /CaesarKey/nbproject/private/
 Sudoku/out/production/Sudoku/output.txt
+Sudoku/.idea/workspace.xml
+*.xml
