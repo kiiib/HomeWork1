@@ -1,11 +1,15 @@
 
 //package mousedrawing;
 
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.LinkedList;
 import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.event.MouseInputAdapter;
 
 /**
@@ -51,15 +55,24 @@ public class MouseDrawing extends JPanel {
 		JFrame frame = new JFrame("MouseDrawing");
 		MouseDrawing mypanel = new MouseDrawing();
 		frame.add(mypanel);
+        frame.setLayout(new FlowLayout());
 		frame.setSize(1024, 768);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
-		JButton cleanCanvasButton = new JButton("clean canvas");
-		cleanCanvasButton.setVisible(true);
-		cleanCanvasButton.
+        JButton cleanCanvasButton = new JButton("clean canvas");    // button with clean the canvas
+        cleanCanvasButton.setBounds(20, 20, 200, 50);
+        frame.add(cleanCanvasButton);
 
-	}	
+        //ButtonHandler cleanCanvasHandler = new ButtonHandler();
+        cleanCanvasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "pressed");
+            }
+        });
+
+	}
 	private class MyListener extends MouseInputAdapter  {
 
 		@Override
@@ -84,7 +97,12 @@ public class MouseDrawing extends JPanel {
 			current = e.getPoint();
 			repaint();
 		}
-		
-		
+
 	}
+//	private class ButtonHandler implements ActionListener{
+//        public void actionPerformed(ActionEvent event){
+//            JOptionPane.showMessageDialog( MouseDrawing.this, String.format(
+//                    "You pressed: %s", event.getActionCommand() ) );
+//        }
+//    }
 }
