@@ -8,8 +8,6 @@ import java.awt.event.MouseEvent;
 import java.util.LinkedList;
 import javax.swing.*;
 import javax.swing.JButton;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.event.MouseInputAdapter;
 
 /**
@@ -20,9 +18,9 @@ public class MouseDrawing extends JPanel {
 	Point begin, current;
 	LinkedList<Drawable> drawables;
 
-	private JToggleButton drawLineButton;	// button with change mode to draw line
-	private JToggleButton drawCircleButton;	// button with change mode to draw circle
-	private JToggleButton drawRectButton;	// button with change mode to draw Rectangle
+	//private JToggleButton drawLineButton;	// button with change mode to draw line
+	//private JToggleButton drawCircleButton;	// button with change mode to draw circle
+	//private JToggleButton drawRectButton;	// button with change mode to draw Rectangle
 	//private JButton cleanCanvasButton;	// button with clean the canvas
 
 	public MouseDrawing() {
@@ -40,6 +38,7 @@ public class MouseDrawing extends JPanel {
 			int minY = Math.min(begin.y, current.y);
 			int maxY = Math.max(begin.y, current.y);
 			g.drawOval(minX, minY, maxX-minX, maxY-minY);
+			//g.drawRect(minX, minY, maxX-minX, maxY-minY);
 		}
 		for(Drawable drawable : drawables) {
 			drawable.draw(g);
@@ -55,7 +54,9 @@ public class MouseDrawing extends JPanel {
 		JFrame frame = new JFrame("MouseDrawing");
 		MouseDrawing mypanel = new MouseDrawing();
 		frame.add(mypanel);
-        frame.setLayout(new FlowLayout());
+		//frame.setLayout(null);
+        //frame.setLayout(new FlowLayout());
+		//frame.setLayout(new BorderLayout());
 		frame.setSize(1024, 768);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -64,11 +65,12 @@ public class MouseDrawing extends JPanel {
         cleanCanvasButton.setBounds(20, 20, 200, 50);
         frame.add(cleanCanvasButton);
 
-        //ButtonHandler cleanCanvasHandler = new ButtonHandler();
+
         cleanCanvasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "pressed");
+//				JOptionPane.showMessageDialog(frame, "pressed");
+
             }
         });
 
