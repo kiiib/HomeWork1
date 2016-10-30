@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-//package mousedrawing;
-
 import java.awt.Graphics;
 
 /**
  *
- * @author borson
+ * @author Jianbin Liu
  */
 public class MyOval implements Drawable {
 	public int left, top, width, height;
@@ -23,5 +16,6 @@ public class MyOval implements Drawable {
 	@Override
 	public void draw(Graphics g) {
 		g.drawOval(left, top, width, height);
+		//g.drawRect(left, top, width, height);
 	}
 }
