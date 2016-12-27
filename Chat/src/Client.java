@@ -1,6 +1,4 @@
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -16,10 +14,22 @@ public class Client {
             // get the output stream, send info to server
             OutputStream outputStream = socket.getOutputStream();  //字節輸出流
             PrintWriter printWriter = new PrintWriter(outputStream);    //將輸出流包裝為打印流
-            printWriter.write("username: admin, password: 123");
+            printWriter.write("username: haha, password: 123");
             printWriter.flush();    //清空緩衝區
             socket.shutdownOutput();    //關閉輸出流
 
+            InputStream inputStream = socket.getInputStream();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+            String info = null;
+            //循環讀取客戶端的資訊
+            while ((info = bufferedReader.readLine()) != null){
+                System.out.println("I am client , server said: " + info);
+            }
+
+            //close
+            bufferedReader.close();
+            inputStream.close();
             printWriter.close();
             outputStream.close();
             socket.close();
