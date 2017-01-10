@@ -6,7 +6,7 @@ import java.net.Socket;
  * Created by Jianbin Liu on 12/27/2016.
  * Class: handle server thread
  */
-public class ServerThread extends Thread {
+public class ServerThread extends Thread{
     Socket socket = null;
     public ServerThread(Socket socket){
         this.socket = socket;

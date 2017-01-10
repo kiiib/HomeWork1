@@ -69,3 +69,5 @@ $RECYCLE.BIN/
 Sudoku/out/production/Sudoku/output.txt
 Sudoku/.idea/workspace.xml
 *.xml
+/FileUpload/nbproject/private/
+/FileUpload/build/
